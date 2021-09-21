@@ -4,6 +4,14 @@
 # .tfstate files
 *.tfstate
 *.tfstate.*
+*.hcl
+
+# .tfvars files
+*.tfvars
+
+# terratest
+test/.terraform
+test/terraform.*
 
 # Crash log files
 crash.log
@@ -27,3 +35,10 @@ override.tf.json
 
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
 # example: *tfplan*
+*tfplan*
+
+# Idea
+.Idea
+
+# VS Code Workspace
+*.code-workspace
