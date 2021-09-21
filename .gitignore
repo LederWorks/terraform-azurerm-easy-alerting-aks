@@ -38,7 +38,7 @@ override.tf.json
 *tfplan*
 
 # Idea
-.Idea
+.idea
 
 # VS Code Workspace
 *.code-workspace
