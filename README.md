@@ -1,5 +1,3 @@
-LederWorks Azure Easy Alerting Terraform Module
-
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
