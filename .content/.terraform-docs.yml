@@ -9,7 +9,20 @@ sections:
   hide: []
   show: []
 
-content: ""
+content: |-
+  LederWorks Azure Easy Alerting Terraform Module
+
+  {{ .Header }}
+
+  ## Examples
+
+  ```hcl
+  {{ include "examples/example.tf" }}
+  ```
+
+  {{ .Providers }}
+
+  This module never been tested below terraform 1.0.0 and azurerm 2.76.0, suggesting to use latest versions. 
 
 output:
   file: ""

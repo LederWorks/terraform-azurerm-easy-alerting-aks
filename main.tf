@@ -448,7 +448,7 @@ resource "azurerm_monitor_metric_alert" "alert_aks-oom-killed-containers" {
 
 resource "azurerm_monitor_metric_alert" "alert_aks-pods-ready-percentage" {
   count               = var.AKSAlertPodsReadyPercentageCreated == false ? 0 : 1
-  name                = "AKS_Container_CPU_Percentage"
+  name                = "AKS_Pods_Ready_Percentage"
   resource_group_name = var.AKSResourceGroupObject.name 
   scopes              = ["/subscriptions/${var.SubscriptionID}/resourceGroups/${var.AKSResourceGroupObject.name}/providers/Microsoft.ContainerService/managedClusters/${var.AKSClusterName}"]
   description         = "${var.AKSClusterName} Container CPU Percentage"
