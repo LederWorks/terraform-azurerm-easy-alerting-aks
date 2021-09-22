@@ -284,7 +284,7 @@ resource "azurerm_monitor_metric_alert" "alert_aks-restarting-container-count" {
     dimension {
       name     = "kubernetes namespace"
       operator = "Include"
-      values   = var.AKSAlertRestartingContainerCountThreshold
+      values   = var.AKSAlertRestartingContainerCountNameSpaces
     }
 
     dimension {
