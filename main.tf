@@ -5,11 +5,11 @@
 #################################
 
 resource "azurerm_monitor_metric_alert" "alert_aks-container-cpu-percentage" {
-  count               = var.AKSAlertContainerCPUPercentageCreated == false ? 0 : 1
-  name                = "AKS_Container_CPU_Percentage"
+  count               = var.AKSAlertContainerCPUPercentageCreated == true ? 1 : 0
+  name                = "AKS_Container_CPU_Percentage-${var.Purpose}"
   resource_group_name = var.AKSResourceGroupObject.name 
   scopes              = ["/subscriptions/${var.SubscriptionID}/resourceGroups/${var.AKSResourceGroupObject.name}/providers/Microsoft.ContainerService/managedClusters/${var.AKSClusterName}"]
-  description         = "${var.AKSClusterName} Container CPU Percentage"
+  description         = "${var.AKSClusterName} Container CPU Percentage -${var.Purpose}"
   severity            = var.AKSAlertContainerCPUPercentageSeverity
   enabled             = var.AKSAlertContainerCPUPercentageEnabled
   frequency           = var.AKSAlertContainerCPUPercentageFrequency
@@ -51,11 +51,11 @@ resource "azurerm_monitor_metric_alert" "alert_aks-container-cpu-percentage" {
 ####################################
 
 resource "azurerm_monitor_metric_alert" "alert_aks-container-memory-percentage" {
-  count               = var.AKSAlertContainerMemoryPercentageCreated == false ? 0 : 1
-  name                = "AKS_Container_Memory_Percentage"
+  count               = var.AKSAlertContainerMemoryPercentageCreated == true ? 1 : 0
+  name                = "AKS_Container_Memory_Percentage-${var.Purpose}"
   resource_group_name = var.AKSResourceGroupObject.name
   scopes              = ["/subscriptions/${var.SubscriptionID}/resourceGroups/${var.AKSResourceGroupObject.name}/providers/Microsoft.ContainerService/managedClusters/${var.AKSClusterName}"]
-  description         = "${var.AKSClusterName} Container Memory Percentage"
+  description         = "${var.AKSClusterName} Container Memory Percentage -${var.Purpose}"
   severity            = var.AKSAlertContainerMemoryPercentageSeverity
   enabled             = var.AKSAlertContainerMemoryPercentageEnabled
   frequency           = var.AKSAlertContainerMemoryPercentageFrequency
@@ -97,11 +97,11 @@ resource "azurerm_monitor_metric_alert" "alert_aks-container-memory-percentage" 
 ############################
 
 resource "azurerm_monitor_metric_alert" "alert_aks-node-cpu-percentage" {
-  count               = var.AKSAlertNodeCPUPercentageCreated == false ? 0 : 1
-  name                = "AKS_Node_CPU_Percentage"
+  count               = var.AKSAlertNodeCPUPercentageCreated == true ? 1 : 0
+  name                = "AKS_Node_CPU_Percentage-${var.Purpose}"
   resource_group_name = var.AKSResourceGroupObject.name
   scopes              = ["/subscriptions/${var.SubscriptionID}/resourceGroups/${var.AKSResourceGroupObject.name}/providers/Microsoft.ContainerService/managedClusters/${var.AKSClusterName}"]
-  description         = "${var.AKSClusterName} Node CPU Percentage"
+  description         = "${var.AKSClusterName} Node CPU Percentage -${var.Purpose}"
   severity            = var.AKSAlertNodeCPUPercentageSeverity
   enabled             = var.AKSAlertNodeCPUPercentageEnabled
   frequency           = var.AKSAlertNodeCPUPercentageFrequency
@@ -137,11 +137,11 @@ resource "azurerm_monitor_metric_alert" "alert_aks-node-cpu-percentage" {
 ###############################
 
 resource "azurerm_monitor_metric_alert" "alert_aks-node-memory-percentage" {
-  count               = var.AKSAlertNodeMemoryPercentageCreated == false ? 0 : 1
-  name                = "AKS_Node_Memory_Percentage"
+  count               = var.AKSAlertNodeMemoryPercentageCreated == true ? 1 : 0
+  name                = "AKS_Node_Memory_Percentage-${var.Purpose}"
   resource_group_name = var.AKSResourceGroupObject.name
   scopes              = ["/subscriptions/${var.SubscriptionID}/resourceGroups/${var.AKSResourceGroupObject.name}/providers/Microsoft.ContainerService/managedClusters/${var.AKSClusterName}"]
-  description         = "${var.AKSClusterName} Node Memory Percentage"
+  description         = "${var.AKSClusterName} Node Memory Percentage -${var.Purpose}"
   severity            = var.AKSAlertNodeMemoryPercentageSeverity
   enabled             = var.AKSAlertNodeMemoryPercentageEnabled
   frequency           = var.AKSAlertNodeMemoryPercentageFrequency
@@ -177,11 +177,11 @@ resource "azurerm_monitor_metric_alert" "alert_aks-node-memory-percentage" {
 #############################
 
 resource "azurerm_monitor_metric_alert" "alert_aks-node-disk-usage-percentage" {
-  count               = var.AKSAlertNodeDiskPercentageCreated == false ? 0 : 1
-  name                = "AKS_Node_Disk_Percentage"
+  count               = var.AKSAlertNodeDiskPercentageCreated == true ? 1 : 0
+  name                = "AKS_Node_Disk_Percentage-${var.Purpose}"
   resource_group_name = var.AKSResourceGroupObject.name
   scopes              = ["/subscriptions/${var.SubscriptionID}/resourceGroups/${var.AKSResourceGroupObject.name}/providers/Microsoft.ContainerService/managedClusters/${var.AKSClusterName}"]
-  description         = "${var.AKSClusterName} Node Disk Percentage"
+  description         = "${var.AKSClusterName} Node Disk Percentage -${var.Purpose}"
   severity            = var.AKSAlertNodeDiskPercentageSeverity
   enabled             = var.AKSAlertNodeDiskPercentageEnabled
   frequency           = var.AKSAlertNodeDiskPercentageFrequency
@@ -223,11 +223,11 @@ resource "azurerm_monitor_metric_alert" "alert_aks-node-disk-usage-percentage" {
 #####################################
 
 resource "azurerm_monitor_metric_alert" "alert_aks-pv-percentage" {
-  count               = var.AKSAlertPVPercentageCreated == false ? 0 : 1
-  name                = "AKS_PV_Percentage"
+  count               = var.AKSAlertPVPercentageCreated == true ? 1 : 0
+  name                = "AKS_PV_Percentage-${var.Purpose}"
   resource_group_name = var.AKSResourceGroupObject.name
   scopes              = ["/subscriptions/${var.SubscriptionID}/resourceGroups/${var.AKSResourceGroupObject.name}/providers/Microsoft.ContainerService/managedClusters/${var.AKSClusterName}"]
-  description         = "${var.AKSClusterName} Persistent Volume Percentage"
+  description         = "${var.AKSClusterName} Persistent Volume Percentage -${var.Purpose}"
   severity            = var.AKSAlertPVPercentageSeverity
   enabled             = var.AKSAlertPVPercentageEnabled
   frequency           = var.AKSAlertPVPercentageFrequency
@@ -263,11 +263,11 @@ resource "azurerm_monitor_metric_alert" "alert_aks-pv-percentage" {
 ####################################
 
 resource "azurerm_monitor_metric_alert" "alert_aks-restarting-container-count" {
-  count               = var.AKSAlertRestartingContainerCountCreated == false ? 0 : 1
-  name                = "AKS_Restarting_Container_Count"
+  count               = var.AKSAlertRestartingContainerCountCreated == true ? 1 : 0
+  name                = "AKS_Restarting_Container_Count-${var.Purpose}"
   resource_group_name = var.AKSResourceGroupObject.name
   scopes              = ["/subscriptions/${var.SubscriptionID}/resourceGroups/${var.AKSResourceGroupObject.name}/providers/Microsoft.ContainerService/managedClusters/${var.AKSClusterName}"]
-  description         = "${var.AKSClusterName} Restarting Container Count"
+  description         = "${var.AKSClusterName} Restarting Container Count -${var.Purpose}"
   severity            = var.AKSAlertRestartingContainerCountSeverity
   enabled             = var.AKSAlertRestartingContainerCountEnabled
   frequency           = var.AKSAlertRestartingContainerCountFrequency
@@ -309,11 +309,11 @@ resource "azurerm_monitor_metric_alert" "alert_aks-restarting-container-count" {
 ##########################
 
 resource "azurerm_monitor_metric_alert" "alert_aks-pods-in-failed-state" {
-  count               = var.AKSAlertPodsInFailedStateCreated == false ? 0 : 1
-  name                = "AKS_Pods_In_Failed_State"
+  count               = var.AKSAlertPodsInFailedStateCreated == true ? 1 : 0
+  name                = "AKS_Pods_In_Failed_State-${var.Purpose}"
   resource_group_name = var.AKSResourceGroupObject.name
   scopes              = ["/subscriptions/${var.SubscriptionID}/resourceGroups/${var.AKSResourceGroupObject.name}/providers/Microsoft.ContainerService/managedClusters/${var.AKSClusterName}"]
-  description         = "${var.AKSClusterName} Pods In Failed State"
+  description         = "${var.AKSClusterName} Pods In Failed State -${var.Purpose}"
   severity            = var.AKSAlertPodsInFailedStateSeverity
   enabled             = var.AKSAlertPodsInFailedStateEnabled
   frequency           = var.AKSAlertPodsInFailedStateFrequency
@@ -361,11 +361,11 @@ resource "azurerm_monitor_metric_alert" "alert_aks-pods-in-failed-state" {
 ########################
 
 resource "azurerm_monitor_metric_alert" "alert_aks-node-not-ready" {
-  count               = var.AKSAlertNodeNotReadyCreated == false ? 0 : 1
-  name                = "AKS_Node_Not_Ready"
+  count               = var.AKSAlertNodeNotReadyCreated == true ? 1 : 0
+  name                = "AKS_Node_Not_Ready-${var.Purpose}"
   resource_group_name = var.AKSResourceGroupObject.name
   scopes              = ["/subscriptions/${var.SubscriptionID}/resourceGroups/${var.AKSResourceGroupObject.name}/providers/Microsoft.ContainerService/managedClusters/${var.AKSClusterName}"]
-  description         = "${var.AKSClusterName} Node Not Ready"
+  description         = "${var.AKSClusterName} Node Not Ready -${var.Purpose}"
   severity            = var.AKSAlertNodeNotReadySeverity
   enabled             = var.AKSAlertNodeNotReadyEnabled
   frequency           = var.AKSAlertNodeNotReadyFrequency
@@ -401,11 +401,11 @@ resource "azurerm_monitor_metric_alert" "alert_aks-node-not-ready" {
 ###############################
 
 resource "azurerm_monitor_metric_alert" "alert_aks-oom-killed-containers" {
-  count               = var.AKSAlertOOMKilledContainersCreated == false ? 0 : 1
-  name                = "AKS_OOM_Killed_Containers"
+  count               = var.AKSAlertOOMKilledContainersCreated == true ? 1 : 0
+  name                = "AKS_OOM_Killed_Containers-${var.Purpose}"
   resource_group_name = var.AKSResourceGroupObject.name
   scopes              = ["/subscriptions/${var.SubscriptionID}/resourceGroups/${var.AKSResourceGroupObject.name}/providers/Microsoft.ContainerService/managedClusters/${var.AKSClusterName}"]
-  description         = "${var.AKSClusterName} OOM Killed Containers"
+  description         = "${var.AKSClusterName} OOM Killed Containers -${var.Purpose}"
   severity            = var.AKSAlertOOMKilledContainersSeverity
   enabled             = var.AKSAlertOOMKilledContainersEnabled
   frequency           = var.AKSAlertOOMKilledContainersFrequency
@@ -447,11 +447,11 @@ resource "azurerm_monitor_metric_alert" "alert_aks-oom-killed-containers" {
 ######################
 
 resource "azurerm_monitor_metric_alert" "alert_aks-pods-ready-percentage" {
-  count               = var.AKSAlertPodsReadyPercentageCreated == false ? 0 : 1
-  name                = "AKS_Pods_Ready_Percentage"
+  count               = var.AKSAlertPodsReadyPercentageCreated == true ? 1 : 0
+  name                = "AKS_Pods_Ready_Percentage-${var.Purpose}"
   resource_group_name = var.AKSResourceGroupObject.name 
   scopes              = ["/subscriptions/${var.SubscriptionID}/resourceGroups/${var.AKSResourceGroupObject.name}/providers/Microsoft.ContainerService/managedClusters/${var.AKSClusterName}"]
-  description         = "${var.AKSClusterName} Container CPU Percentage"
+  description         = "${var.AKSClusterName} Container CPU Percentage -${var.Purpose}"
   severity            = var.AKSAlertPodsReadyPercentageSeverity
   enabled             = var.AKSAlertPodsReadyPercentageEnabled
   frequency           = var.AKSAlertPodsReadyPercentageFrequency
@@ -493,11 +493,11 @@ resource "azurerm_monitor_metric_alert" "alert_aks-pods-ready-percentage" {
 ##########################
 
 resource "azurerm_monitor_metric_alert" "alert_aks-stale-jobs-count" {
-  count               = var.AKSAlertPodsInFailedStateCreated == false ? 0 : 1
-  name                = "AKS_Stale_Jobs_Count"
+  count               = var.AKSAlertPodsInFailedStateCreated == true ? 1 : 0
+  name                = "AKS_Stale_Jobs_Count-${var.Purpose}"
   resource_group_name = var.AKSResourceGroupObject.name
   scopes              = ["/subscriptions/${var.SubscriptionID}/resourceGroups/${var.AKSResourceGroupObject.name}/providers/Microsoft.ContainerService/managedClusters/${var.AKSClusterName}"]
-  description         = "${var.AKSClusterName} Stale Jobs Count"
+  description         = "${var.AKSClusterName} Stale Jobs Count -${var.Purpose}"
   severity            = var.AKSAlertPodsInFailedStateSeverity
   enabled             = var.AKSAlertPodsInFailedStateEnabled
   frequency           = var.AKSAlertPodsInFailedStateFrequency
