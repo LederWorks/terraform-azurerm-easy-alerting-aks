@@ -1,28 +1,35 @@
-formatter: "" # this is required
+formatter: markdown document
 
 version: ""
 
-header-from: main.tf
-footer-from: ""
+header-from: .content/header.txt
+footer-from: .content/footer.txt
 
 sections:
-  hide: []
-  show: []
+  show:
+    - header
+    - footer
+    - inputs
+    - outputs
+    - requirements
+    - providers
+    - resources
 
 content: |-
-  LederWorks Azure Easy Alerting Terraform Module
-
   {{ .Header }}
 
-  ## Examples
-
-  ```hcl
-  {{ include "examples/example.tf" }}
-  ```
+  {{ .Requirements }}
 
   {{ .Providers }}
 
-  This module never been tested below terraform 1.0.0 and azurerm 2.76.0, suggesting to use latest versions. 
+  {{ .Resources }}
+
+  {{ .Inputs }}
+
+  {{ .Outputs }}
+
+  {{ .Footer }}
+
 
 output:
   file: ""
@@ -34,22 +41,20 @@ output:
 
 output-values:
   enabled: false
-  from: ""
 
 sort:
-  enabled: false
-  by: name
+  enabled: true
+  by: required
 
 settings:
   anchor: true
-  color: true
   default: true
-  description: false
+  description: true
   escape: true
   hide-empty: false
   html: true
   indent: 2
-  lockfile: true
+  lockfile: false
   required: true
   sensitive: true
   type: true

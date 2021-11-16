@@ -17,4 +17,4 @@ jobs:
         output-file: README.md
         output-method: inject
         git-push: "true"
-        args: markdown document
+        git-commit-message: "terraform-docs: autogenerate README.md"
